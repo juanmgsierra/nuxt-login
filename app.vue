@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout>
-        <div class="flex justify-center items-center mt-52 " v-if="!firebaseUser">
+        <div class="flex justify-center items-center mt-52" v-if="!firebaseUser">
             <div class="column is-half is-offset-one-quarter">
                 <div class="flex justify-center">
                     <button @click="registerComponent = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
@@ -9,7 +9,7 @@
                     <button @click="registerComponent = true" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
                         Register
                     </button>
-                    </div>
+                </div>
                 <FormAuth                
                     @submit="signIn"
                     :form="formLogin"
