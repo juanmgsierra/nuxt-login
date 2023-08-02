@@ -33,7 +33,7 @@ export const onUser = async () => {
     const router = useRouter();
     onAuthStateChanged(auth, (user) => {
         if(!user){
-            router.push("/login");
+            router.push("/");
         }
         firebaseUser.value = user;
     })
