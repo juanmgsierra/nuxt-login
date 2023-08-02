@@ -1,7 +1,5 @@
 <template>
-    <div class="flex flex-wrap">  
-      <button @click="logOut">logout</button>
-     
+    <div class="flex flex-wrap">      
         <CharacterCard
             v-for="{ id, name, image, status, species, location} in data.characters.results"
             :key="id"
@@ -15,12 +13,7 @@
     </div>
 </template>
 <script setup lang="ts">
-    
-    const logOut = async() => {
-        const credentials = await signOut()
-        console.log("credentials", credentials)
-    }
-
+       
     type CharacterResults = {
     characters: {
         results: {

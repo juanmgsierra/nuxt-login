@@ -1,30 +1,31 @@
 <template>
-    <div class="flex justify-center items-center mt-52 " v-if="!firebaseUser">
-        
-        <div class="column is-half is-offset-one-quarter">
-            <div class="flex justify-center">
-                <button @click="registerComponent = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-                    Login
-                </button>
-                <button @click="registerComponent = true" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-                    Register
-                </button>
-                </div>
-            <FormAuth                
-                @submit="signIn"
-                :form="formLogin"
-                nameButton="login"
-                v-if="!firebaseUser && !registerComponent"
-            />
-            <FormAuth               
-                @submit="register"
-                :form="formRegister"
-                nameButton="Registrer"
-                v-if="registerComponent"
-            />        
+    <NuxtLayout>
+        <div class="flex justify-center items-center mt-52 " v-if="!firebaseUser">
+            <div class="column is-half is-offset-one-quarter">
+                <div class="flex justify-center">
+                    <button @click="registerComponent = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        Login
+                    </button>
+                    <button @click="registerComponent = true" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                        Register
+                    </button>
+                    </div>
+                <FormAuth                
+                    @submit="signIn"
+                    :form="formLogin"
+                    nameButton="login"
+                    v-if="!firebaseUser && !registerComponent"
+                />
+                <FormAuth               
+                    @submit="register"
+                    :form="formRegister"
+                    nameButton="Registrer"
+                    v-if="registerComponent"
+                />        
+            </div>
         </div>
-    </div>
-    <NuxtPage v-if="firebaseUser" />
+        <NuxtPage v-if="firebaseUser" />
+    </NuxtLayout>
 </template>
 <script setup>
 const firebaseUser = useFirebaseUser();

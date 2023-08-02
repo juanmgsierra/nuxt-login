@@ -1,7 +1,7 @@
 <template>
+    <NuxtLink  to="/" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</NuxtLink>
     <div class="flex flex-wrap">
-      <NuxtLink to="/" class="ml-3">Back</NuxtLink>
-
+      
       <CharacterCard
         :id="data.character.id"
         :name="data.character.name"
@@ -11,6 +11,7 @@
         :locations="data.character.location.name"
     />
     </div>
+
 </template>
 <script setup lang="ts">
 definePageMeta({

@@ -22,8 +22,7 @@ export const signInUser = async (email: string, password: string) => {
 
 export const signOut = async () => {
     const auth = getAuth();
-    const result = await auth.signOut();
-    console.log("logut", result)
+    await auth.signOut();
 }
 
 export const onUser = async () => {
