@@ -1,5 +1,5 @@
 <template>
-    <div class="flex m-3 bg-gray-300 rounded-xl">
+    <div class="flex m-3 bg-gray-500 rounded-xl">
         <NuxtLink :to="`/character/${id}`">
             <NuxtImg 
                 :src="image"
